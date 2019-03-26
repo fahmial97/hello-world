@@ -34,7 +34,7 @@
 											<a href="<?= site_url('ruang/edit/'.$r->id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit
                      </a>
-                       <a onclick="deleteConfirm('<?= site_url('Ruang/delete'.$r->id) ?>')" href="#!" class="btn btn-small text-danger">
+                       <a onclick="deleteConfirm('<?= site_url('ruang/delete/'.$r->id)?>')" href="#!" class="btn btn-small text-danger">
                          <i class="fas fa-trash"></i> Hapus
                        </a>
 										</td>

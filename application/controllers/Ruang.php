@@ -24,6 +24,7 @@ class Ruang extends CI_Controller
    {
       $data['user'] = $this->db->get_where('user', ['nim' => $this->session->userdata('nim')])->row_array();
       $data['judul'] = 'Tambah Ruang';
+
        $tb_ruang = $this->m_ruang;
        $validation = $this->form_validation;
        $validation->set_rules($tb_ruang->rules());
@@ -64,13 +65,14 @@ class Ruang extends CI_Controller
 
    }
 
-    function delete($id = null)
+    function delete($id)
    {
        if (!isset($id)) show_404();
 
-       if ($this->m_ruang->delete($id)) {
-           redirect('admin/index');
-       }
+       $this->m_ruang->delete($id);
+        
+        redirect('admin');
+        
    }
 
    private function _uploadImage()
