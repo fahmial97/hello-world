@@ -38,7 +38,7 @@ class Ruang extends CI_Controller
        $this->load->view('templates/admin_footer');
    }
 
-    function edit($id = null)
+    function edit($id)
    {
       $data['user'] = $this->db->get_where('user', ['nim' => $this->session->userdata('nim')])->row_array();
       $data['judul'] = 'Edit Ruang';
@@ -50,8 +50,9 @@ class Ruang extends CI_Controller
        $validation->set_rules($tb_ruang->rules());
 
        if ($validation->run()) {
-           $tb_ruang->update($id);
-           $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $tb_ruang->update($id);  //variabel $id ditambahin buat ngambil id di urlnya
+           $this->session->set_flashdata('success', 'Berhasil disimpan'); //sessionnya belum bisa, silahkan di coba
+           redirect('admin'); //selesai proses di redirect 
        }
 
        $data["tb_ruang"] = $tb_ruang->getById($id);

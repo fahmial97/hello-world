@@ -12,7 +12,7 @@
 					</div>
 					<div class="card-body">
 
-						<form action="<?= base_url('Ruang/edit') ?>" method="post" enctype="multipart/form-data" >
+						<form action="" method="post" enctype="multipart/form-data" >
 
               <div class="form-group">
                 <label for="image">Foto</label>
