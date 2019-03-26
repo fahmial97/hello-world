@@ -33,7 +33,7 @@ class Ruang extends CI_Controller
            $tb_ruang->save();
            $this->session->set_flashdata('success', 'Berhasil disimpan');
            
-           redirect('admin','refresh');
+           redirect('admin');
            
        }
 
