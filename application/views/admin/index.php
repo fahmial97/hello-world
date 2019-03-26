@@ -1,6 +1,12 @@
   <!-- Begin Page Content -->
         <div class="container-fluid">
 
+        <?php if ($this->session->flashdata('success')): ?>
+          <div class="alert alert-success" role="alert">
+            <?= $this->session->flashdata('success'); ?>
+          </div>
+				<?php endif; ?>
+
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Ruang</h1>
             <div class="text-right m-3">
@@ -34,7 +40,7 @@
 											<a href="<?= site_url('ruang/edit/'.$r->id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit
                      </a>
-                       <a onclick="deleteConfirm('<?= site_url('Ruang/delete'.$r->id) ?>')" href="#!" class="btn btn-small text-danger">
+                       <a onclick="deleteConfirm('<?= site_url('Ruang/delete/'.$r->id) ?>')" href="#!" class="btn btn-small text-danger">
                          <i class="fas fa-trash"></i> Hapus
                        </a>
 										</td>

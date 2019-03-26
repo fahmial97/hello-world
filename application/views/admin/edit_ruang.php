@@ -1,18 +1,12 @@
 <div class="container-fluid">
 
-				<?php if ($this->session->flashdata('success')): ?>
-				<div class="alert alert-success" role="alert">
-					<?= $this->session->flashdata('success'); ?>
-				</div>
-				<?php endif; ?>
-
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?= site_url('admin/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?= site_url('admin/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?= base_url('Ruang/edit') ?>" method="post" enctype="multipart/form-data" >
+						<form action="" method="post" enctype="multipart/form-data" >
 
               <div class="form-group">
                 <label for="image">Foto</label>

@@ -32,6 +32,9 @@ class Ruang extends CI_Controller
        if ($validation->run()) {
            $tb_ruang->save();
            $this->session->set_flashdata('success', 'Berhasil disimpan');
+           
+           redirect('admin','refresh');
+           
        }
 
        $this->load->view('templates/admin_header', $data);
