@@ -43,17 +43,20 @@ class m_ruang extends CI_Model{
           $this->db->insert($this->_table, $this);
       }
 
-      public function update()
-      {
-          $post = $this->input->post();
-          $this->id = $post["id"];
-          $this->no_ruang = $post["no_ruang"];
-          $this->status = $post["status"];
-          $this->db->update($this->_table, $this, array('id' => $post['id']));
+      public function update($id) //variabel id diinclude di fungsi modelnya terus di cari pakai id nya
+      { 
+            // data yang diambil dari form terus di masukin ke databasenya
+          $data = [
+            'no_ruang' => $this->input->post('no_ruang'),
+            'status' => $this->input->post('status')
+          ];
+
+          $this->db->where('id', $id);
+          $this->db->update($this->_table, $data);
       }
 
       public function delete($id)
       {
-          return $this->db->delete($this->_table, array("id" => $id));
+          return $this->db->delete($this->_table, ['id'=>$id]);
       }
   }
