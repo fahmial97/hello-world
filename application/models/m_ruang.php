@@ -15,7 +15,11 @@ class m_ruang extends CI_Model{
         return [
             ['field' => 'no_ruang',
             'label' => 'Nomor ruang',
-            'rules' => 'required'],
+            'rules' => 'required|min_length[10]',
+            'errors' => [
+                'min_length' => 'Minimal 10 Karakter'
+                ]
+            ],
 
 
             ['field' => 'status',
@@ -51,8 +55,7 @@ class m_ruang extends CI_Model{
             'status' => $this->input->post('status')
           ];
 
-          $this->db->where('id', $id);
-          $this->db->update($this->_table, $data);
+          $this->db->update($this->_table, $data, ['id'=>$id]);
       }
 
       public function delete($id)
